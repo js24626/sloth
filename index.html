@@ -37,11 +37,14 @@
 </head>
 <body class="bg-yellow-100 flex flex-col items-center justify-center min-h-screen">
     
-   <!-- Navbar -->
-   <nav class="bg-white shadow-md w-[90%] mx-auto p-2 border-2 border-black rounded-2xl flex justify-between items-center px-8 mt-4">
-    <div class="flex items-center gap-4">
-        <img src="/Images/logo2.png" alt="Logo" class="w-full h-10">
-        <ul class="flex space-x-6 text-black font-bold navbar-text">
+    <nav class="bg-white shadow-md w-[90%] mx-auto p-4 border-2 border-black rounded-2xl flex justify-between items-center px-6 mt-4 relative">
+        <div class="flex items-center gap-4">
+            <img src="/Images/logo2.png" alt="Logo" class="h-12 w-auto max-w-full">
+        </div>
+        
+        
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-black font-bold navbar-text">
             <li><a href="#">About</a></li>
             <li><a href="#">Story</a></li>
             <li><a href="#">Slerfonomics</a></li>
@@ -49,167 +52,207 @@
             <li><a href="#">Allocations</a></li>
             <li><a href="#">Explorer</a></li>
         </ul>
-    </div>
-    <div class="flex items-center space-x-4">
-        <button class="bg-white text-black px-4 py-2 navbar-text rounded border-2 border-black">Buy Slerf</button>
         
-        <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
-            <img src="/Images/telegram.png" alt="Telegram" class="w-5 h-5">
-        </a>
-    
-        <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
-            <img src="/Images/twitter.png" alt="Twitter" class="w-5 h-5">
-        </a>
-    
-        <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
-            <img src="/Images/discord.png" alt="Discord" class="w-5 h-5">
-        </a>
-    </div>
-    
-</nav>
-
-<!-- ✅ FIXED IMAGE (Will Stay in Place) -->
-<div class="absolute top-[100px] left-[700px]">
-    <img src="/Images/sl.png" alt="Your Image" class="w-84">
-</div>
-
-
-<!-- Main Content -->
-<div class="mr-[600px] mt-10"> 
-    <img src="/Images/text.png" alt="SLERF Image" class="w-[550px]"> 
-</div>
-
-
-<!-- Contract Address -->
-<div class="mt-6 mr-[650px]  text-center">
-    <p class="text-xl text-left navbar-text font-bold">Contract Address</p>
-    <div class="flex font-bold  text-sm mt-2 relative">
-        <input id="contractAddress" type="text" value="fcuw5ppJ9aYZjmbE5T2HwxV" 
-            class="border-2 border-black px-4 py-2 w-96 bg-white text-black rounded-lg" readonly>
-            <button onclick="copyClipboard()" 
-            class="bg-white border-2 border-black rounded-lg p-2 shadow-md flex items-center justify-center w-9 h-9 absolute right-[-10px] translate-y-2">
-            <img src="/Images/paste.png" alt="Copy" class="w-4 h-4">
+        <div class="hidden md:flex items-center space-x-4">
+            <button class="bg-white text-black px-4 py-2 navbar-text rounded border-2 border-black">Buy Slerf</button>
+            <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
+                <img src="/Images/telegram.png" alt="Telegram" class="w-5 h-5">
+            </a>
+            <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
+                <img src="/Images/twitter.png" alt="Twitter" class="w-5 h-5">
+            </a>
+            <a href="#" class="border-2 border-black rounded-lg p-2 flex items-center justify-center w-10 h-10">
+                <img src="/Images/discord.png" alt="Discord" class="w-5 h-5">
+            </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden border-2 border-black p-2 rounded-lg">
+            <img src="/Images/menu.png" alt="Menu" class="w-6 h-6">
         </button>
-    </div>
-</div>
+        
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-2 border-black rounded-lg shadow-lg flex flex-col items-center py-4 space-y-4 md:hidden">
+            <li><a href="#" class="block px-4 py-2">About</a></li>
+            <li><a href="#" class="block px-4 py-2">Story</a></li>
+            <li><a href="#" class="block px-4 py-2">Slerfonomics</a></li>
+            <li><a href="#" class="block px-4 py-2">Raids</a></li>
+            <li><a href="#" class="block px-4 py-2">Allocations</a></li>
+            <li><a href="#" class="block px-4 py-2">Explorer</a></li>
+            <button class="bg-white text-black px-4 py-2 navbar-text rounded border-2 border-black">Buy Slerf</button>
+        </ul>
+    </nav>
 
 
-<!-- Progress Bar -->
-<div class="w-full max-w-lg mr-[600px] mt-6 relative">
-    <div class="bg-gray-300 h-6 w-full rounded-full relative">
-        <div class="bg-orange-500 h-6 rounded-full" style="width: 96.8%;"></div>
-    </div>
-    <div class="absolute right-16 top-10 bg-orange-500 text-white px-6 py-2 rounded-lg font-bold text-lg shadow-[8px_8px_0px_black]">
-        24762 WALLETS <br> (96.8%)
+
+    <div class="absolute top-[100px] left-[700px]">
+        <img src="/Images/sl.png" alt="Your Image" class="w-84">
     </div>
     
-</div>
-
-<!-- Footer -->
-<footer class="bg-orange-500 w-full py-3 mt-32 text-center text-white font-bold">
-    <marquee scrollamount="10">$SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF </marquee>
-</footer>
+    
+    <!-- Main Content -->
+    <div class="mr-[600px] mt-10"> 
+        <img src="/Images/text.png" alt="SLERF Image" class="w-[550px]"> 
+    </div>
+    
+    
+    <!-- Contract Address -->
+    <div class="mt-6 mr-[650px]  text-center">
+        <p class="text-xl text-left navbar-text font-bold">Contract Address</p>
+        <div class="flex font-bold  text-sm mt-2 relative">
+            <input id="contractAddress" type="text" value="fcuw5ppJ9aYZjmbE5T2HwxV" 
+                class="border-2 border-black px-4 py-2 w-96 bg-white text-black rounded-lg" readonly>
+                <button onclick="copyClipboard()" 
+                class="bg-white border-2 border-black rounded-lg p-2 shadow-md flex items-center justify-center w-9 h-9 absolute right-[-10px] translate-y-2">
+                <img src="/Images/paste.png" alt="Copy" class="w-4 h-4">
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- Progress Bar -->
+    <div class="w-full max-w-lg mr-[600px] mt-6 relative">
+        <div class="bg-gray-300 h-6 w-full rounded-full relative">
+            <div class="bg-orange-500 h-6 rounded-full" style="width: 96.8%;"></div>
+        </div>
+        <div class="absolute right-16 top-10 bg-orange-500 text-white px-6 py-2 rounded-lg font-bold text-lg shadow-[8px_8px_0px_black]">
+            24762 WALLETS <br> (96.8%)
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-orange-500 w-full py-3 mt-32 text-center text-white font-bold">
+        <marquee scrollamount="10">$SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF $SLERF </marquee>
+    </footer>
+                
+    
             
 
-     <!-- 2nd page -->
-     <div class="w-full h-screen bg-yellow-100 flex flex-col items-center justify-center relative">
-        
-        <!-- Image at the Top (Replacing Sloth) -->
-        <img src="/Images/sloo.png" alt="Custom Image" class="absolute top-0 w-60 h-52 object-contain">
+   <!-- 2nd Page -->
+<div class="w-full min-h-screen bg-yellow-100 flex flex-col items-center justify-center relative px-4">
+    
+    <!-- Top Image -->
+    <img src="/Images/sloo.png" alt="Custom Image" class="absolute top-4 w-40 md:w-60 h-auto object-contain">
 
-    
-        <!-- Main Content Box -->
-        <div class="bg-white w-3/4  mt-56 md:w-2/3 p-6 md:p-10 rounded-lg border-4 border-black shadow-lg text-center relative">
-            <div class="absolute inset-0 flex justify-center items-center">
-                <div class="w-80 h-80 bg-center bg-contain bg-no-repeat opacity-10" style="background-image: url('/Images/sl.png');"></div>
-            </div>
-            <h1 class="text-3xl md:text-4xl border-white  font-bold text-orange-600">SLERF STORY</h1>
-            <p class="text-black mt-4 text-sm md:text-base leading-relaxed">
-                Welcome to our website, a place where innovation meets seamless user experience. Designed with modern web technologies, our platform offers a visually appealing, responsive, and user-friendly interface. Whether you're here to explore, learn, or engage, we ensure smooth navigation and an intuitive layout to enhance your browsing experience. <br>
-                 Our website is built with high performance in mind, featuring dynamic components, optimized loading speeds, and interactive elements that make every visit enjoyable. We are committed to providing valuable content, engaging visuals, and a platform that meets the evolving needs of our users. Explore now and experience the perfect blend of functionality and design!<br> our platform offers a visually appealing, responsive, and user-friendly interface. Whether you're here to explore, learn, or engage, we ensure smooth navigation and an intuitive layout to enhance your browsing experience. 
-                 
-            </p>
-        </div>
+    <!-- Main Content Box -->
+    <div class="bg-white w-full max-w-3xl mt-40 md:mt-56 p-6 md:p-10 rounded-lg border-4 border-black shadow-lg text-center relative">
         
-    </div>
-    
-    <div class="relative w-full bg-orange-500 mt-16 py-14 flex flex-col items-center">
-        <!-- Background Image in Center with Small Size -->
+        <!-- Faded Background Image -->
         <div class="absolute inset-0 flex justify-center items-center">
-            <div class="w-80 h-80 bg-center bg-contain bg-no-repeat opacity-20" style="background-image: url('sl.png');"></div>
+            <div class="w-48 md:w-80 h-48 md:h-80 bg-center bg-contain bg-no-repeat opacity-10" 
+                 style="background-image: url('/Images/sl.png');">
+            </div>
         </div>
-    
-        <h2 class="text-3xl font-bold text-white text-border relative z-10">CONTRIBUTORS</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 relative z-10">
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/mm.JPG" alt="MEXC" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/Capture.JPG" alt="Raydium" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/lb.JPG" alt="LBank" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/po.JPG" alt="Poloniex" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/bit.JPG" alt="BitMart" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/bitg.JPG" alt="Bitget" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/ju.JPG" alt="Jupiter" class="h-10">
-            </span>
-            <span class="flex items-center justify-center px-8 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
-                <img src="/Images/dex.JPG" alt="Dextools" class="h-10">
-            </span>
-        </div>
-        
+
+        <!-- Heading -->
+        <h1 class="text-2xl md:text-4xl font-bold text-orange-600 relative">SLERF STORY</h1>
+
+        <!-- Paragraph -->
+        <p class="text-black mt-4 text-sm md:text-base leading-relaxed relative">
+            Welcome to our website, a place where innovation meets seamless user experience. Designed with modern web technologies, our platform offers a visually appealing, responsive, and user-friendly interface. Whether you're here to explore, learn, or engage, we ensure smooth navigation and an intuitive layout to enhance your browsing experience. <br><br>
+            
+            Our website is built with high performance in mind, featuring dynamic components, optimized loading speeds, and interactive elements that make every visit enjoyable. We are committed to providing valuable content, engaging visuals, and a platform that meets the evolving needs of our users. Explore now and experience the perfect blend of functionality and design!
+        </p>
     </div>
     
+</div>
+
     
-
-
-    <div class="mt-20 text-center">
-        <h2 class="text-4xl text-shadow font-extrabold text-border">$SLERFNOMICS</h2>
-        <p class="text-3xl font-extrabold text-border mt-2 text-orange-600">888,888,888,888</p>
-    </div>
+   <!-- Contributors Section -->
+<div class="relative w-full bg-orange-500 mt-16 py-14 flex flex-col items-center px-4">
     
-
-    <!-- Circular Chart with Image in Center and Labels Around -->
-    <div class="relative w-[320px] h-[320px] mt-20 flex items-center justify-center">
-        <!-- Circular Image -->
-        <img src="/Images/circle.png" alt="Circular Image" class="w-full h-full rounded-full object-cover">
-        
-        <!-- Labels Around the Circle -->
-        <div class="absolute top-[-40px] left-[-50px] transform -translate-x-1/2 text-blue-600 font-extrabold text-4xl text-center">
-            11% <br> <span class="text-black text-lg">Early Contributors</span>
-        </div>
-        
-        <div class="absolute top-[8%] right-[-99px] text-yellow-600 font-bold text-4xl text-center">
-            33% <br> <span class="text-black text-lg">Presale</span>
-        </div>
-        
-        <div class="absolute top-[90%] right-[-99px] text-purple-700 font-bold text-4xl text-center">
-            33% <br> <span class="text-black text-lg">Liquidity, CEX & MM</span>
-        </div>
-        
-        <div class="absolute bottom-[-40px] left-[-80px] transform -translate-x-1/2 text-pink-600 font-bold text-4xl text-center">
-            22% <br> <span class="text-black text-lg">Treasury & Marketing</span>
-        </div>
-        
-        <div class="absolute top-[40%] left-[-60px] text-orange-600 font-bold text-4xl text-center">
-            1% <br> <span class="text-black text-lg">Airdrop</span>
+    <!-- Faded Background Image -->
+    <div class="absolute inset-0 flex justify-center items-center">
+        <div class="w-40 md:w-80 h-40 md:h-80 bg-center bg-contain bg-no-repeat opacity-20" 
+             style="background-image: url('/Images/sl.png');">
         </div>
     </div>
+
+    <!-- Heading -->
+    <h2 class="text-2xl md:text-3xl font-bold text-white relative z-10">CONTRIBUTORS</h2>
+
+    <!-- Contributors Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 relative z-10">
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/mm.JPG" alt="MEXC" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/Capture.JPG" alt="Raydium" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/lb.JPG" alt="LBank" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/po.JPG" alt="Poloniex" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/bit.JPG" alt="BitMart" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/bitg.JPG" alt="Bitget" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/ju.JPG" alt="Jupiter" class="h-10">
+        </span>
+        <span class="flex items-center justify-center px-6 py-3 bg-white rounded-lg border-2 border-black shadow-md transition duration-300 hover:scale-110">
+            <img src="/Images/dex.JPG" alt="Dextools" class="h-10">
+        </span>
+    </div>
+
+</div>
+
     
 
-    <!-- Footer -->
-    <div class="w-full bg-orange-500 text-center py-4 text-white font-bold mt-14">
-        Copyright Slerfnomics 2024
+<div class="mt-20 text-center">
+    <h2 class="text-4xl text-shadow font-extrabold text-border">$SLERFNOMICS</h2>
+    <p class="text-3xl font-extrabold text-border mt-2 text-orange-600">888,888,888,888</p>
+</div>
+
+
+<!-- Circular Chart with Image in Center and Labels Around -->
+<div class="relative w-[320px] h-[320px] mt-20 flex items-center justify-center">
+    <!-- Circular Image -->
+    <img src="/Images/circle.png" alt="Circular Image" class="w-full h-full rounded-full object-cover">
+    
+    <!-- Labels Around the Circle -->
+    <div class="absolute top-[-40px] left-[-50px] transform -translate-x-1/2 text-blue-600 font-extrabold text-4xl text-center">
+        11% <br> <span class="text-black text-lg">Early Contributors</span>
     </div>
+    
+    <div class="absolute top-[8%] right-[-99px] text-yellow-600 font-bold text-4xl text-center">
+        33% <br> <span class="text-black text-lg">Presale</span>
+    </div>
+    
+    <div class="absolute top-[90%] right-[-99px] text-purple-700 font-bold text-4xl text-center">
+        33% <br> <span class="text-black text-lg">Liquidity, CEX & MM</span>
+    </div>
+    
+    <div class="absolute bottom-[-40px] left-[-80px] transform -translate-x-1/2 text-pink-600 font-bold text-4xl text-center">
+        22% <br> <span class="text-black text-lg">Treasury & Marketing</span>
+    </div>
+    
+    <div class="absolute top-[40%] left-[-60px] text-orange-600 font-bold text-4xl text-center">
+        1% <br> <span class="text-black text-lg">Airdrop</span>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<div class="w-full bg-orange-500 text-center py-4 text-white font-bold mt-14">
+    Copyright Slerfnomics 2024
+</div>
+
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 
 </body>
 </html>
